@@ -1,0 +1,39 @@
+{
+  "name": "typed-object-stream",
+  "version": "1.0.0",
+  "description": "NodeJS object streams with typings",
+  "main": "./lib/typed-object-stream.js",
+  "scripts": {
+    "build": "tsc  &&  npm run lint",
+    "build:clean": "npm run clean && npm run build",
+    "build:publish": "npm run clean && npm run lint && tsc --sourceMap false",
+    "clean": "rm -rf coverage lib",
+    "lint": "tslint -p ./tsconfig.json",
+    "prepublishOnly": "npm run build:publish  &&  npm run test",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fider/typed-object-stream"
+  },
+  "keywords": [
+    "typed",
+    "stream"
+  ],
+  "author": "Wojciech Fiderek",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "24.0.15",
+    "@types/node": "10.10.1",
+    "jest": "24.8.0",
+    "nyc": "13.0.1",
+    "ts-jest": "24.0.2",
+    "ts-node": "7.0.1",
+    "tslint": "5.16.0",
+    "typescript": "3.4.5"
+  },
+  "bugs": {
+    "url": "https://github.com/fider/typed-object-stream/issues"
+  },
+  "homepage": "https://github.com/fider/typed-object-stream#readme"
+}
