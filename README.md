@@ -3,39 +3,28 @@
 - [About](#about)
 - [Installation & requirements](#installation-and-requirements)
 - [Examples](#examples)
-  - [First](#first-example)
-  - [Second](#second-example)
-- [Documentation](#documentation)
+  - [First](#basic-example)
 
 # About
-npm scripts in package.json requires bash command line
+There are already similar libraries but none of them fully covers typings for objectMode streams.
 
-This module provides... TODO
+Node JS streams with strong typings.
 
-# Installation and requirements
-Requires [Node.js](https://nodejs.org/) vX.X.X TODO
-```sh
-$ npm install TODO-MODULE-NAME
-```
+Exposed classes are Node streams typed extensions, but they are forced to bo in `objectMode` as it is the only case where strong typings in streams have sense.
+
+# Requirements
+Tested with node 10.16.3
 
 # Examples
 
-## First example
+## Basic example
 ```js
-// js code
+    import * as stream from 'typed-object-stream';
+
+    let source: stream.Readable<  {code: number}                    > = ...;
+    let modify: stream.Transform< {code: number}, {message: string} > = ...;
+    let dest:   stream.Writable<                  {message: string} > = ...;
+
+    source.pipe(modify).pipe(dest);
+
 ```
-
-## Second example
-```js
-// js code
-```
-
-# Documentation
-
-## `module`
-- ### `Class` description
-  - #### `Class:method` description
-- ### `Function` description
-
-
-![image](https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png)
